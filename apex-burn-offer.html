@@ -1,1 +1,2239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex Burn | Limited Offer. Up To 40% Off Today Only.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&family=Barlow+Condensed:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red: #e8000d;
+  --red-dark: #9b0008;
+  --red-glow: rgba(232,0,13,0.4);
+  --red-faint: rgba(232,0,13,0.08);
+  --black: #050507;
+  --dark: #0a0a0e;
+  --panel: #0f0f15;
+  --panel-light: #141420;
+  --border: rgba(232,0,13,0.25);
+  --border-dim: rgba(255,255,255,0.07);
+  --white: #ffffff;
+  --off-white: #d4d4dc;
+  --muted: #6b6b7a;
+  --gold: #c9a84c;
+  --gold-faint: rgba(201,168,76,0.12);
+  --mono: 'Share Tech Mono', monospace;
+  --display: 'Barlow Condensed', sans-serif;
+  --ui: 'Rajdhani', sans-serif;
+}
 
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--ui);
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.07) 2px, rgba(0,0,0,0.07) 4px);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.4;
+}
+
+/* ============ URGENCY BAR ============ */
+.urgency-bar {
+  background: var(--red);
+  padding: 10px 24px;
+  text-align: center;
+  position: relative;
+  z-index: 1001;
+}
+
+.urgency-bar p {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.urgency-bar strong {
+  font-weight: 700;
+  font-family: var(--display);
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+/* ============ NAVBAR ============ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 32px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(5,5,7,0.97);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+}
+
+.nav-logo {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.nav-logo span { color: var(--red); }
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-center .trust-chip {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  padding: 4px 10px;
+  border: 1px solid var(--border-dim);
+}
+
+.nav-cta-btn {
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--white);
+  background: var(--red);
+  padding: 9px 22px;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow 0.2s, background 0.2s;
+  display: inline-block;
+}
+
+.nav-cta-btn:hover {
+  background: var(--red-dark);
+  box-shadow: 0 0 24px var(--red-glow);
+}
+
+@media (max-width: 640px) {
+  .nav-center { display: none; }
+  .nav { padding: 0 16px; }
+  .nav-cta-btn { font-size: 11px; padding: 8px 14px; }
+}
+
+/* ============ COUNTDOWN ============ */
+.countdown-section {
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.countdown-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.countdown-timer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ct-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--black);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  min-width: 52px;
+}
+
+.ct-num {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--red);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.ct-unit {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ct-sep {
+  font-family: var(--display);
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--red);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.stock-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--off-white);
+  letter-spacing: 1px;
+}
+
+.stock-bar-wrap {
+  width: 80px;
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.stock-bar-fill {
+  position: absolute;
+  inset: 0;
+  width: 23%;
+  background: var(--red);
+  box-shadow: 0 0 8px var(--red-glow);
+}
+
+/* ============ OFFER HERO ============ */
+.offer-hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.oh-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(232,0,13,0.1) 0%, transparent 65%),
+    linear-gradient(180deg, #050507 0%, #080003 100%);
+}
+
+.oh-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(232,0,13,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232,0,13,0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.oh-grid::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(transparent, var(--black));
+}
+
+.oh-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 60px 60px;
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 64px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .oh-inner {
+    grid-template-columns: 1fr;
+    padding: 60px 24px 40px;
+    gap: 40px;
+  }
+}
+
+/* LEFT: COPY */
+.oh-copy {}
+
+.oh-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--red);
+  padding: 6px 14px;
+  margin-bottom: 28px;
+}
+
+.oh-flag span {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.oh-headline {
+  font-family: var(--display);
+  font-size: clamp(44px, 6.5vw, 84px);
+  font-weight: 900;
+  line-height: 0.9;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin-bottom: 28px;
+}
+
+.oh-headline .accent {
+  color: var(--red);
+  display: block;
+  text-shadow: 0 0 50px rgba(232,0,13,0.5);
+}
+
+.oh-proof-strip {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+  color: var(--gold);
+  font-size: 16px;
+}
+
+.proof-count {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.proof-divider {
+  width: 1px;
+  height: 16px;
+  background: var(--border-dim);
+}
+
+.proof-badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--red);
+  letter-spacing: 2px;
+  padding: 3px 8px;
+  border: 1px solid var(--border);
+  text-transform: uppercase;
+}
+
+.oh-sub {
+  font-size: 17px;
+  color: var(--off-white);
+  line-height: 1.65;
+  max-width: 480px;
+  margin-bottom: 36px;
+  font-weight: 400;
+}
+
+.oh-proof-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.proof-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--off-white);
+}
+
+.proof-bullet .pb-icon {
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--red);
+  background: var(--red-faint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-size: 11px;
+}
+
+.oh-cta-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 360px;
+}
+
+.oh-cta-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--red);
+  color: var(--white);
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 22px 32px;
+  border: 2px solid var(--red);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.oh-cta-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.12) 100%);
+  pointer-events: none;
+}
+
+.oh-cta-primary:hover {
+  box-shadow: 0 0 50px var(--red-glow);
+  transform: translateY(-2px);
+}
+
+.oh-cta-arrow {
+  font-size: 20px;
+  transition: transform 0.2s;
+}
+
+.oh-cta-primary:hover .oh-cta-arrow { transform: translateX(4px); }
+
+.oh-cta-note {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* RIGHT: PRODUCT STACK */
+.oh-product-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .oh-product-stack { order: -1; }
+}
+
+.product-stack-visual {
+  position: relative;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ps-glow {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,0,13,0.18) 0%, transparent 70%);
+  animation: glow-breathe 3s ease-in-out infinite;
+}
+
+@keyframes glow-breathe {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+/* hero: real product photos (img/apexburn.png next to this HTML file) */
+.bottle-stack {
+  position: relative;
+  width: 400px;
+  height: 380px;
+}
+
+.stack-bottle-img {
+  position: absolute;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(0 20px 36px rgba(0,0,0,0.6)) drop-shadow(0 0 28px rgba(232,0,13,0.25));
+  pointer-events: none;
+  user-select: none;
+}
+
+/* side bottles: sit wider for clearer overlap */
+.b1 {
+  left: 0;
+  bottom: 0;
+  height: 300px;
+  max-width: 150px;
+  transform: rotate(-10deg);
+  z-index: 1;
+  opacity: 0.78;
+}
+.b2 {
+  left: 50%;
+  bottom: -4px;
+  transform: translateX(-50%);
+  z-index: 3;
+  height: 360px;
+  max-width: 185px;
+  opacity: 1;
+}
+.b3 {
+  right: 0;
+  bottom: 0;
+  height: 300px;
+  max-width: 150px;
+  transform: rotate(10deg);
+  z-index: 1;
+  opacity: 0.78;
+}
+
+@media (max-width: 900px) {
+  .bottle-stack { width: min(100%, 380px); height: 340px; }
+  .stack-bottle-img.b1,
+  .stack-bottle-img.b3 { height: 260px; max-width: 130px; }
+  .stack-bottle-img.b2 { height: 310px; max-width: 160px; }
+  .product-stack-visual { height: 380px; }
+}
+
+.ring-orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(232,0,13,0.12);
+}
+.ring-orbit.r1 { width: 400px; height: 400px; animation: spin 25s linear infinite; }
+.ring-orbit.r2 { width: 320px; height: 320px; animation: spin 18s linear infinite reverse; }
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.ring-orbit.r1::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px var(--red);
+}
+
+/* price panel below product */
+.ps-price-panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.ps-price-left {}
+
+.ps-was {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.ps-now {
+  font-family: var(--display);
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+}
+
+.ps-per {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.ps-save-badge {
+  background: var(--red);
+  padding: 10px 18px;
+  text-align: center;
+}
+
+.ps-save-badge .save-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 2px;
+  display: block;
+}
+
+.ps-save-badge .save-val {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+}
+
+/* ============ SOCIAL PROOF BAR ============ */
+.proof-bar {
+  background: var(--panel);
+  border-top: 1px solid var(--border-dim);
+  border-bottom: 1px solid var(--border-dim);
+  padding: 20px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .proof-bar { padding: 20px 24px; gap: 28px; }
+}
+
+.proof-stat {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.proof-stat-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.proof-stat-copy strong {
+  display: block;
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+}
+
+.proof-stat-copy span {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.proof-divider-v {
+  width: 1px;
+  height: 36px;
+  background: var(--border-dim);
+}
+
+@media (max-width: 480px) {
+  .proof-divider-v { display: none; }
+}
+
+/* ============ SECTION UTILITY ============ */
+.section-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+@media (max-width: 768px) {
+  .section-wrap { padding: 0 24px; }
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--red);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.section-tag::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--red);
+}
+
+.section-title {
+  font-family: var(--display);
+  font-size: clamp(34px, 5vw, 58px);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.section-title em {
+  font-style: normal;
+  color: var(--red);
+}
+
+/* ============ TESTIMONIALS ============ */
+.testimonials-section {
+  background: var(--dark);
+  padding: 100px 0;
+  border-top: 1px solid var(--border-dim);
+}
+
+@media (max-width: 768px) {
+  .testimonials-section { padding: 64px 0; }
+}
+
+.testi-header {
+  margin-bottom: 56px;
+}
+
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-dim);
+  border: 1px solid var(--border-dim);
+}
+
+@media (max-width: 900px) {
+  .testi-grid { grid-template-columns: 1fr; }
+}
+
+.testi-card {
+  background: var(--panel);
+  padding: 36px 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.testi-card::before {
+  content: '"';
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-family: var(--display);
+  font-size: 80px;
+  font-weight: 900;
+  color: rgba(232,0,13,0.08);
+  line-height: 1;
+}
+
+.testi-card.featured {
+  background: #100009;
+  border-left: 2px solid var(--red);
+}
+
+.testi-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 16px;
+  color: var(--gold);
+  font-size: 14px;
+}
+
+.testi-body {
+  font-size: 15px;
+  color: var(--off-white);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+.testi-footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.testi-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--red-dark), #2a0005);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--red);
+  flex-shrink: 0;
+}
+
+.testi-name {
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+  display: block;
+}
+
+.testi-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+}
+
+.testi-result-tag {
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--red);
+  letter-spacing: 2px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  background: var(--red-faint);
+}
+
+/* ============ OFFER SECTION (PRODUCTS) ============ */
+.offer-section {
+  padding: 100px 0;
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) { .offer-section { padding: 64px 0; } }
+
+.offer-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(232,0,13,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232,0,13,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.offer-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(var(--red), transparent);
+}
+
+.offer-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.offer-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.offer-subtitle {
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  margin-bottom: 56px;
+}
+
+/* 3 PACKS GRID */
+.packs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .packs-grid {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+  .pack-six { order: -1; }
+  .pack-two { order: 1; }
+  .pack-three { order: 2; }
+}
+
+.pack-card {
+  background: var(--panel);
+  border: 1px solid var(--border-dim);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pack-card:hover { transform: translateY(-3px); }
+
+.pack-card.featured {
+  border-color: var(--red);
+  box-shadow: 0 0 40px rgba(232,0,13,0.18), 0 0 0 1px rgba(232,0,13,0.1);
+}
+
+.pack-top-badge {
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  display: block;
+  text-align: center;
+  background: rgba(232,0,13,0.1);
+  color: var(--red);
+  border-bottom: 1px solid var(--border);
+}
+
+.pack-card.featured .pack-top-badge {
+  background: var(--red);
+  color: var(--white);
+  border-color: var(--red);
+}
+
+.pack-body { padding: 28px 24px 32px; }
+
+.pack-name {
+  font-family: var(--display);
+  font-size: 30px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: var(--white);
+  line-height: 1;
+}
+
+.pack-card.featured .pack-name { font-size: 38px; }
+
+.pack-supply {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  margin-top: 4px;
+}
+
+/* pack cards: real bottles — 2 flat / 6 as two rows of 3 / 3 depth */
+.pack-bottles {
+  margin: 0 auto 22px;
+  user-select: none;
+}
+
+.pack-bottles .pb-img {
+  width: auto;
+  object-fit: contain;
+  object-position: bottom center;
+  display: block;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.5)) drop-shadow(0 3px 6px rgba(0,0,0,0.35));
+}
+
+/* 2 bottles: side by side, equal size, ~80% card width, no overlap */
+.pack-bottles--2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(10px, 4vw, 20px);
+  width: 88%;
+  min-height: 132px;
+}
+
+.pack-bottles--2 .pb-img {
+  height: 132px;
+  max-width: 42%;
+}
+
+/* 6 bottles: two rows × three (equal size, clear grid) */
+.pack-bottles--6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+  min-height: 0;
+}
+
+.pack-bottles--6 .pb-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(6px, 2.5vw, 14px);
+  width: 100%;
+}
+
+.pack-bottles--6 .pb-row .pb-img {
+  height: 88px;
+  width: auto;
+  max-width: 30%;
+  flex: 0 0 auto;
+}
+
+.pack-card.featured .pack-bottles--6 {
+  max-width: 330px;
+}
+
+.pack-card.featured .pack-bottles--6 .pb-row .pb-img {
+  height: 102px;
+  max-width: 31%;
+}
+
+/* 3 bottles: one large front center, two smaller behind L/R */
+.pack-bottles--3 {
+  position: relative;
+  height: 148px;
+  width: 100%;
+  max-width: 240px;
+}
+
+.pack-bottles--3 .pb-3-back {
+  position: absolute;
+  bottom: 0;
+  height: 108px;
+  z-index: 1;
+}
+
+.pack-bottles--3 .pb-3-l { left: 8%; }
+.pack-bottles--3 .pb-3-r { right: 8%; }
+
+.pack-bottles--3 .pb-3-front {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 142px;
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+  .pack-bottles--2 .pb-img { height: 118px; }
+  .pack-bottles--6 { max-width: 270px; }
+  .pack-bottles--6 .pb-row .pb-img { height: 76px; }
+  .pack-card.featured .pack-bottles--6 { max-width: 290px; }
+  .pack-card.featured .pack-bottles--6 .pb-row .pb-img { height: 88px; }
+  .pack-bottles--3 { height: 132px; max-width: 220px; }
+  .pack-bottles--3 .pb-3-back { height: 96px; }
+  .pack-bottles--3 .pb-3-front { height: 126px; }
+}
+
+.pack-old {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: line-through;
+  margin-bottom: 2px;
+}
+
+.pack-price {
+  font-family: var(--display);
+  font-size: 50px;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+}
+
+.pack-card.featured .pack-price {
+  font-size: 62px;
+  color: var(--red);
+  text-shadow: 0 0 30px var(--red-glow);
+}
+
+.pack-per {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.pack-perks {
+  list-style: none;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pack-perks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--off-white);
+  line-height: 1.4;
+}
+
+.pack-perks li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background: var(--red);
+  border-radius: 1px;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.pack-btn {
+  display: block;
+  text-align: center;
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 16px;
+  border: 2px solid var(--red);
+  color: var(--red);
+  transition: all 0.25s;
+  cursor: pointer;
+  background: transparent;
+  width: 100%;
+}
+
+.pack-card.featured .pack-btn {
+  background: var(--red);
+  color: var(--white);
+  padding: 20px;
+  font-size: 16px;
+  box-shadow: 0 0 24px rgba(232,0,13,0.3);
+}
+
+.pack-btn:hover {
+  background: var(--red);
+  color: var(--white);
+}
+
+/* savings ribbon */
+.pack-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+}
+
+.pack-ribbon::before {
+  display: none;
+}
+
+.pack-card.featured .pack-ribbon-label {
+  position: absolute;
+  top: 52px;
+  right: -28px;
+  background: var(--gold);
+  color: var(--black);
+  font-family: var(--display);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 36px;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+/* guarantee block */
+.guarantee-block {
+  margin-top: 48px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 28px 32px;
+}
+
+@media (max-width: 640px) {
+  .guarantee-block { flex-direction: column; align-items: center; text-align: center; padding: 24px 20px; }
+}
+
+.gb-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.gb-copy strong {
+  display: block;
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.gb-copy p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 560px;
+}
+
+/* ============ OBJECTION SECTION ============ */
+.objections-section {
+  padding: 100px 0;
+  background: var(--dark);
+  border-top: 1px solid var(--border-dim);
+}
+
+@media (max-width: 768px) { .objections-section { padding: 64px 0; } }
+
+.obj-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border-dim);
+  border: 1px solid var(--border-dim);
+  margin-top: 56px;
+}
+
+@media (max-width: 640px) { .obj-grid { grid-template-columns: 1fr; } }
+
+.obj-card {
+  background: var(--panel);
+  padding: 32px 28px;
+}
+
+.obj-q {
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.obj-q::before {
+  content: 'Q.';
+  color: var(--red);
+  font-family: var(--mono);
+  font-size: 13px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.obj-a {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  padding-left: 24px;
+}
+
+/* ============ INGREDIENTS STRIP ============ */
+.ingredients-strip {
+  background: var(--black);
+  border-top: 1px solid var(--border-dim);
+  padding: 80px 0;
+}
+
+@media (max-width: 768px) { .ingredients-strip { padding: 60px 0; } }
+
+.ing-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+  background: var(--border-dim);
+  border: 1px solid var(--border-dim);
+  margin-top: 48px;
+}
+
+@media (max-width: 900px) { .ing-row { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 480px) { .ing-row { grid-template-columns: repeat(2, 1fr); } }
+
+.ing-tile {
+  background: var(--panel);
+  padding: 24px 16px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+.ing-tile:hover { background: #110009; }
+
+.ing-tile::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--red);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.ing-tile:hover::after { transform: scaleX(1); }
+
+.ing-tile-icon { font-size: 22px; display: block; margin-bottom: 10px; }
+
+.ing-tile-name {
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--white);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.ing-tile-tag {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--red);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+}
+
+/* ============ FINAL CTA ============ */
+.final-cta-section {
+  padding: 120px 0 100px;
+  background: var(--dark);
+  border-top: 1px solid var(--border-dim);
+  position: relative;
+  overflow: hidden;
+}
+
+.final-cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 50%, rgba(232,0,13,0.1) 0%, transparent 65%);
+}
+
+.final-cta-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(232,0,13,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232,0,13,0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.final-cta-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.final-headline {
+  font-family: var(--display);
+  font-size: clamp(42px, 7vw, 90px);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+}
+
+.final-headline .accent { color: var(--red); text-shadow: 0 0 60px var(--red-glow); }
+
+.final-sub {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 auto 48px;
+}
+
+.final-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--red);
+  color: var(--white);
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 26px 56px;
+  border: 2px solid var(--red);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.final-cta-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.1));
+  pointer-events: none;
+}
+
+.final-cta-btn:hover {
+  box-shadow: 0 0 60px var(--red-glow);
+  transform: translateY(-3px);
+}
+
+.final-trust-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+.trust-item-icon { font-size: 14px; }
+
+/* ============ FOOTER ============ */
+.footer {
+  background: #030306;
+  border-top: 1px solid var(--border-dim);
+  padding: 60px 60px 0;
+}
+
+@media (max-width: 768px) { .footer { padding: 48px 24px 0; } }
+
+.footer-slim {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.footer-row1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+  flex-wrap: wrap;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border-dim);
+}
+
+.footer-brand-block {}
+
+.footer-logo {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: var(--white);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.footer-logo span { color: var(--red); }
+
+.footer-tagline {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.footer-links-block {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-link-group {}
+
+.footer-link-group h5 {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--red);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.footer-link-group ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-link-group ul li a {
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+  font-family: var(--ui);
+}
+
+.footer-link-group ul li a:hover { color: var(--red); }
+
+.footer-contact-block {}
+
+.footer-contact-block h5 {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--red);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.fc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.fc-icon { color: var(--red); font-style: normal; }
+
+.fc-text {
+  font-size: 13px;
+  color: var(--muted);
+  font-family: var(--ui);
+}
+
+.footer-row2 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-bottom: 28px;
+}
+
+.footer-address-block {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+  line-height: 1.8;
+}
+
+.footer-legal-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .footer-legal-row { align-items: flex-start; }
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-legal-links a {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+
+.footer-legal-links a:hover { color: var(--red); }
+
+.footer-copy {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+}
+
+/* ============ DISCLAIMER STRIP ============ */
+.disclaimer-strip {
+  background: #030306;
+  border-top: 1px solid var(--border-dim);
+  padding: 24px 60px 32px;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) { .disclaimer-strip { padding: 20px 24px 28px; } }
+
+.disclaimer-strip p {
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+  text-align: center;
+}
+
+/* ============ MOBILE STICKY CTA ============ */
+.sticky-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(5,5,7,0.97);
+  border-top: 1px solid var(--border);
+  padding: 12px 20px;
+  backdrop-filter: blur(12px);
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) { .sticky-bar { display: flex; } }
+
+.sticky-bar-price {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--white);
+}
+
+.sticky-bar-price small {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.sticky-bar-btn {
+  flex-shrink: 0;
+  background: var(--red);
+  color: var(--white);
+  font-family: var(--display);
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 24px;
+  white-space: nowrap;
+}
+
+/* animations */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.au { animation: fade-up 0.7s ease forwards; }
+.au-1 { animation-delay: 0.1s; opacity: 0; }
+.au-2 { animation-delay: 0.22s; opacity: 0; }
+.au-3 { animation-delay: 0.36s; opacity: 0; }
+.au-4 { animation-delay: 0.5s; opacity: 0; }
+.au-5 { animation-delay: 0.64s; opacity: 0; }
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 var(--red-glow); }
+  50% { box-shadow: 0 0 0 5px transparent; }
+}
+</style>
+</head>
+<body>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  <p><strong>LIMITED TIME.</strong> &nbsp; Today's order ships free with priority handling. Stock at 23%.</p>
+</div>
+
+<!-- NAVBAR -->
+<nav class="nav">
+  <div class="nav-logo">APEX<span>BURN</span></div>
+  <div class="nav-center">
+    <div class="trust-chip">60-DAY GUARANTEE</div>
+    <div class="trust-chip">GRAS CERTIFIED</div>
+  </div>
+  <a href="#offer" class="nav-cta-btn">Order Now</a>
+</nav>
+
+<!-- COUNTDOWN -->
+<div class="countdown-section">
+  <span class="countdown-label">Offer Expires In</span>
+  <div class="countdown-timer">
+    <div class="ct-block"><span class="ct-num" id="ct-h">04</span><span class="ct-unit">HRS</span></div>
+    <span class="ct-sep">:</span>
+    <div class="ct-block"><span class="ct-num" id="ct-m">37</span><span class="ct-unit">MIN</span></div>
+    <span class="ct-sep">:</span>
+    <div class="ct-block"><span class="ct-num" id="ct-s">22</span><span class="ct-unit">SEC</span></div>
+  </div>
+  <div class="stock-indicator">
+    <span>Stock</span>
+    <div class="stock-bar-wrap"><div class="stock-bar-fill"></div></div>
+    <span>23% Left</span>
+  </div>
+</div>
+
+<!-- OFFER HERO -->
+<section class="offer-hero" id="hero">
+  <div class="oh-bg"></div>
+  <div class="oh-grid"></div>
+
+  <div class="oh-inner">
+
+    <!-- COPY -->
+    <div class="oh-copy">
+      <div class="oh-flag au au-1">
+        <span>Exclusive Web Offer. Today Only.</span>
+      </div>
+
+      <h1 class="oh-headline au au-2">
+        Stop Dieting.
+        <span class="accent">Start</span>
+        Burning.
+      </h1>
+
+      <div class="oh-proof-strip au au-3">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <span class="proof-count">4,800+ verified reviews</span>
+        <div class="proof-divider"></div>
+        <span class="proof-badge">Top Rated 2025</span>
+      </div>
+
+      <p class="oh-sub au au-3">
+        Apex Burn is a maximum potency thermogenic built to attack fat from multiple pathways at once. 6 premium trademarked compounds. Transparent label. Zero banned substances. And a 60-day money-back guarantee that means you have nothing to lose.
+      </p>
+
+      <div class="oh-proof-bullets au au-4">
+        <div class="proof-bullet">
+          <span class="pb-icon">&#10003;</span>
+          Amplifies your natural thermogenesis around the clock, not just at the gym.
+        </div>
+        <div class="proof-bullet">
+          <span class="pb-icon">&#10003;</span>
+          SXT sustained energy matrix delivers hours of clean focus with no crash.
+        </div>
+        <div class="proof-bullet">
+          <span class="pb-icon">&#10003;</span>
+          InnoSlim and Actiponin optimize fat utilization at the cellular level.
+        </div>
+        <div class="proof-bullet">
+          <span class="pb-icon">&#10003;</span>
+          Every active ingredient is listed at its exact clinical dose. No blends. No hiding.
+        </div>
+      </div>
+
+      <div class="oh-cta-block au au-5">
+        <a href="#offer" class="oh-cta-primary">
+          Get Up To 40% Off Today
+          <span class="oh-cta-arrow">&#8594;</span>
+        </a>
+        <p class="oh-cta-note">Free U.S. shipping. 60-day guarantee. No auto-ship.</p>
+      </div>
+    </div>
+
+    <!-- PRODUCT VISUAL + PRICE PANEL -->
+    <div class="oh-product-stack">
+      <div class="product-stack-visual">
+        <div class="ps-glow"></div>
+        <div class="ring-orbit r1"></div>
+        <div class="ring-orbit r2"></div>
+        <div class="bottle-stack">
+          <img class="stack-bottle-img b1" src="img/apexburn.png" alt="Apex Burn bottle" width="400" height="1200">
+          <img class="stack-bottle-img b2" src="img/apexburn.png" alt="" width="400" height="1200" aria-hidden="true">
+          <img class="stack-bottle-img b3" src="img/apexburn.png" alt="" width="400" height="1200" aria-hidden="true">
+        </div>
+      </div>
+
+      <div class="ps-price-panel">
+        <div class="ps-price-left">
+          <p class="ps-was">Was $389.70</p>
+          <p class="ps-now">$234</p>
+          <p class="ps-per">6 bottles. $39 per bottle.</p>
+        </div>
+        <div class="ps-save-badge">
+          <span class="save-label">You Save</span>
+          <span class="save-val">$155</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SOCIAL PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-stat">
+    <span class="proof-stat-icon">&#9733;</span>
+    <div class="proof-stat-copy">
+      <strong>4.9 / 5</strong>
+      <span>Average Rating</span>
+    </div>
+  </div>
+  <div class="proof-divider-v"></div>
+  <div class="proof-stat">
+    <span class="proof-stat-icon">&#128666;</span>
+    <div class="proof-stat-copy">
+      <strong>50,000+</strong>
+      <span>Orders Shipped</span>
+    </div>
+  </div>
+  <div class="proof-divider-v"></div>
+  <div class="proof-stat">
+    <span class="proof-stat-icon">&#128737;</span>
+    <div class="proof-stat-copy">
+      <strong>60 Days</strong>
+      <span>Money Back Guarantee</span>
+    </div>
+  </div>
+  <div class="proof-divider-v"></div>
+  <div class="proof-stat">
+    <span class="proof-stat-icon">&#9878;</span>
+    <div class="proof-stat-copy">
+      <strong>GRAS Certified</strong>
+      <span>All 6 Ingredients</span>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="section-wrap">
+    <div class="testi-header">
+      <div class="section-tag">Real Results</div>
+      <h2 class="section-title">People Who <em>Activated</em> The Protocol</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-body">
+          I have tried thermogenics before but nothing hit like this. By week three I noticed I was warmer throughout the day and the scale was finally moving. Down 14 pounds in 8 weeks with zero changes except adding Apex Burn.
+        </p>
+        <div class="testi-footer">
+          <div class="testi-avatar">M</div>
+          <div>
+            <span class="testi-name">Marcus T.</span>
+            <span class="testi-meta">Verified Buyer. Houston, TX</span>
+          </div>
+        </div>
+        <div class="testi-result-tag">&#9660; 14 lbs in 8 weeks</div>
+      </div>
+
+      <div class="testi-card featured">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-body">
+          The energy is different. No jitters, no heart racing, just a clean, focused kind of energy that lasts the whole day. I stopped needing an afternoon coffee about two weeks in. The fat loss part is real too. I am down a full pant size.
+        </p>
+        <div class="testi-footer">
+          <div class="testi-avatar">D</div>
+          <div>
+            <span class="testi-name">Derek S.</span>
+            <span class="testi-meta">Verified Buyer. Chicago, IL</span>
+          </div>
+        </div>
+        <div class="testi-result-tag">&#9660; 1 full pant size in 6 weeks</div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-body">
+          I am 54 and my metabolism has not been the same since my late 30s. A friend recommended Apex Burn. After 10 weeks I lost 18 pounds, my energy is through the roof and I sleep better than I have in years. I ordered 3 more bottles today.
+        </p>
+        <div class="testi-footer">
+          <div class="testi-avatar">R</div>
+          <div>
+            <span class="testi-name">Robert A.</span>
+            <span class="testi-meta">Verified Buyer. Phoenix, AZ</span>
+          </div>
+        </div>
+        <div class="testi-result-tag">&#9660; 18 lbs in 10 weeks</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER / PRODUCTS -->
+<section class="offer-section" id="offer">
+  <div class="offer-inner section-wrap">
+    <div class="offer-header">
+      <div class="section-tag" style="justify-content: center; display: flex;">Exclusive Web Pricing</div>
+      <h2 class="section-title" style="text-align: center;">Select Your <em>Protocol</em></h2>
+    </div>
+    <p class="offer-subtitle">This offer is only available through this page. Retail price is $64.95 per bottle.</p>
+
+    <div class="packs-grid">
+
+      <!-- 2 PACK -->
+      <div class="pack-card pack-two">
+        <div class="pack-top-badge">Starter Pack</div>
+        <div class="pack-body">
+          <h3 class="pack-name">2 Bottles</h3>
+          <p class="pack-supply">60 Day Supply</p>
+          <div class="pack-bottles pack-bottles--2">
+            <img class="pb-img" src="img/apexburn.png" alt="" width="200" height="600" loading="lazy" aria-hidden="true">
+            <img class="pb-img" src="img/apexburn.png" alt="" width="200" height="600" loading="lazy" aria-hidden="true">
+          </div>
+          <p class="pack-old">Was $129.90</p>
+          <p class="pack-price">$89</p>
+          <p class="pack-per">$44.50 per bottle</p>
+          <ul class="pack-perks">
+            <li>2 bottles of Apex Burn</li>
+            <li>Free U.S. shipping</li>
+            <li>60 day money back guarantee</li>
+          </ul>
+          <a href="#" class="pack-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- 6 PACK FEATURED -->
+      <div class="pack-card featured pack-six">
+        <div class="pack-ribbon-label">SAVE 40%</div>
+        <div class="pack-top-badge">Best Value. Most Popular.</div>
+        <div class="pack-body">
+          <h3 class="pack-name">6 Bottles</h3>
+          <p class="pack-supply">180 Day Supply</p>
+          <div class="pack-bottles pack-bottles--6">
+            <div class="pb-row">
+              <img class="pb-img" src="img/apexburn.png" alt="" width="200" height="600" loading="lazy" aria-hidden="true">
+              <img class="pb-img" src="img/apexburn.png" alt="" width="200" height="600" loading="lazy" aria-hidden="true">
+              <img class="pb-img" src="img/apexburn.png" alt="" width="200" height="600" loading="lazy" aria-hidden="true">
+            </div>
+            <div class="pb-row">
+              <img class="pb-img" src="img/apexburn.png" alt="" width="200" height="600" loading="lazy" aria-hidden="true">
+              <img class="pb-img" src="img/apexburn.png" alt="" width="200" height="600" loading="lazy" aria-hidden="true">
+              <img class="pb-img" src="img/apexburn.png" alt="" width="200" height="600" loading="lazy" aria-hidden="true">
+            </div>
+          </div>
+          <p class="pack-old">Was $389.70</p>
+          <p class="pack-price">$234</p>
+          <p class="pack-per">Only $39 per bottle. You save $155.</p>
+          <ul class="pack-perks">
+            <li>6 bottles of Apex Burn</li>
+            <li>Free priority U.S. shipping</li>
+            <li>60 day money back guarantee</li>
+            <li>Maximum transformation protocol</li>
+            <li>Lowest price available anywhere</li>
+          </ul>
+          <a href="#" class="pack-btn">Order Now. Save $155.</a>
+        </div>
+      </div>
+
+      <!-- 3 PACK -->
+      <div class="pack-card pack-three">
+        <div class="pack-top-badge">Core Protocol</div>
+        <div class="pack-body">
+          <h3 class="pack-name">3 Bottles</h3>
+          <p class="pack-supply">90 Day Supply</p>
+          <div class="pack-bottles pack-bottles--3">
+            <img class="pb-img pb-3-back pb-3-l" src="img/apexburn.png" alt="" width="200" height="600" loading="lazy" aria-hidden="true">
+            <img class="pb-img pb-3-back pb-3-r" src="img/apexburn.png" alt="" width="200" height="600" loading="lazy" aria-hidden="true">
+            <img class="pb-img pb-3-front" src="img/apexburn.png" alt="" width="200" height="600" loading="lazy" aria-hidden="true">
+          </div>
+          <p class="pack-old">Was $194.85</p>
+          <p class="pack-price">$129</p>
+          <p class="pack-per">$43 per bottle</p>
+          <ul class="pack-perks">
+            <li>3 bottles of Apex Burn</li>
+            <li>Free U.S. shipping</li>
+            <li>60 day money back guarantee</li>
+          </ul>
+          <a href="#" class="pack-btn">Order Now</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="guarantee-block">
+      <div class="gb-icon-wrap">&#128737;</div>
+      <div class="gb-copy">
+        <strong>60 Day Zero-Risk Guarantee</strong>
+        <p>If you do not see and feel a real difference in your body composition, energy, and focus within 60 days of your purchase, contact our team for a 100% refund. No forms to fill out. No return required. No questions asked. That is how confident we are in this formula.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INGREDIENTS STRIP -->
+<section class="ingredients-strip">
+  <div class="section-wrap">
+    <div class="section-tag">What Is Inside</div>
+    <h2 class="section-title">6 Trademarked <em>Compounds</em></h2>
+    <div class="ing-row">
+      <div class="ing-tile">
+        <span class="ing-tile-icon">&#128293;</span>
+        <span class="ing-tile-name">InnoSlim</span>
+        <span class="ing-tile-tag">Fat Activator</span>
+      </div>
+      <div class="ing-tile">
+        <span class="ing-tile-icon">&#9889;</span>
+        <span class="ing-tile-name">Actiponin</span>
+        <span class="ing-tile-tag">Metabolic Boost</span>
+      </div>
+      <div class="ing-tile">
+        <span class="ing-tile-icon">&#127774;</span>
+        <span class="ing-tile-name">SXT Energy</span>
+        <span class="ing-tile-tag">Sustained Focus</span>
+      </div>
+      <div class="ing-tile">
+        <span class="ing-tile-icon">&#127820;</span>
+        <span class="ing-tile-name">Grains of Paradise</span>
+        <span class="ing-tile-tag">Heat Driver</span>
+      </div>
+      <div class="ing-tile">
+        <span class="ing-tile-icon">&#128170;</span>
+        <span class="ing-tile-name">MitoBurn</span>
+        <span class="ing-tile-tag">Cell Optimizer</span>
+      </div>
+      <div class="ing-tile">
+        <span class="ing-tile-icon">&#9981;</span>
+        <span class="ing-tile-name">CaloriBurn GP</span>
+        <span class="ing-tile-tag">Caloric Burn</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OBJECTIONS / FAQ -->
+<section class="objections-section">
+  <div class="section-wrap">
+    <div class="section-tag">Common Questions</div>
+    <h2 class="section-title">What People <em>Ask First</em></h2>
+    <div class="obj-grid">
+      <div class="obj-card">
+        <p class="obj-q">How fast will I see results?</p>
+        <p class="obj-a">Most users report noticing increased warmth and more sustained energy within the first week. Visible changes in body composition typically appear between weeks 3 and 6, with the most significant results coming after 90 days of consistent use. This is why our 6-bottle protocol is the most popular choice.</p>
+      </div>
+      <div class="obj-card">
+        <p class="obj-q">Will this cause jitters or crash?</p>
+        <p class="obj-a">No. The SXT energy matrix inside Apex Burn is engineered specifically to eliminate the spike-and-crash cycle associated with traditional stimulant thermogenics. You get hours of smooth, focused energy without your heart racing or feeling anxious.</p>
+      </div>
+      <div class="obj-card">
+        <p class="obj-q">Is this safe for long-term use?</p>
+        <p class="obj-a">All 6 active compounds in Apex Burn are GRAS certified by the FDA, meaning they are Generally Regarded As Safe. The formula contains no banned substances, no steroids, and no controlled ingredients. It is designed for sustained daily use as part of your protocol.</p>
+      </div>
+      <div class="obj-card">
+        <p class="obj-q">What is the 60-day guarantee?</p>
+        <p class="obj-a">If at any point within 60 days of your purchase you are not satisfied with your results, contact us and we will issue a full refund. No product returns required. No complicated forms. You either get results or you get your money back. That is the deal.</p>
+      </div>
+      <div class="obj-card">
+        <p class="obj-q">How do I take Apex Burn?</p>
+        <p class="obj-a">Mix one scoop in 8 to 10 oz of cold water, at least 30 minutes before your first meal or training session. For more advanced users, a half scoop may be added 6 to 8 hours later. Do not exceed one full scoop per day.</p>
+      </div>
+      <div class="obj-card">
+        <p class="obj-q">Why is this offer only on this page?</p>
+        <p class="obj-a">We run exclusive web-only pricing for a limited window to give direct customers the best possible value. Retail and other channels do not have access to this pricing. Once the timer above reaches zero, this discount expires and standard pricing applies automatically.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta-section">
+  <div class="final-cta-inner section-wrap">
+    <div class="section-tag" style="justify-content: center; display: flex;">Last Chance</div>
+    <h2 class="final-headline">
+      Your Body<br>
+      <span class="accent">Burns Hotter</span><br>
+      Starting Today.
+    </h2>
+    <p class="final-sub">
+      This pricing is not permanent. When the timer runs out, the offer closes. Lock in your supply now and start your protocol risk-free with a full 60-day guarantee.
+    </p>
+    <a href="#offer" class="final-cta-btn">
+      Claim My Discount &nbsp; &#8594;
+    </a>
+    <div class="final-trust-row">
+      <div class="trust-item"><span class="trust-item-icon">&#128737;</span> 60-Day Guarantee</div>
+      <div class="trust-item"><span class="trust-item-icon">&#128666;</span> Free U.S. Shipping</div>
+      <div class="trust-item"><span class="trust-item-icon">&#9878;</span> GRAS Certified</div>
+      <div class="trust-item"><span class="trust-item-icon">&#128274;</span> Secure Checkout</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-slim">
+    <div class="footer-row1">
+      <div class="footer-brand-block">
+        <span class="footer-logo">APEX<span>BURN</span></span>
+        <p class="footer-tagline">Maximum Potency Thermogenic. Powered by Grax Media.</p>
+      </div>
+
+      <div class="footer-links-block">
+        <div class="footer-link-group">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Ingredients</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-link-group">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Science</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Affiliate Program</a></li>
+          </ul>
+        </div>
+        <div class="footer-link-group">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="#">Track My Order</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Help Center</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-contact-block">
+        <h5>Contact</h5>
+        <div class="fc-item">
+          <em class="fc-icon">&#9990;</em>
+          <span class="fc-text">+1 (800) 555-0198</span>
+        </div>
+        <div class="fc-item">
+          <em class="fc-icon">&#9993;</em>
+          <span class="fc-text">support@apexburn.com</span>
+        </div>
+        <div class="fc-item">
+          <em class="fc-icon">&#9432;</em>
+          <span class="fc-text">Mon to Fri, 9 AM to 5 PM EST</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-row2">
+      <div class="footer-address-block">
+        <p>Grax Media LLC. 1234 Innovation Drive, Suite 500, Austin, TX 78701, United States.</p>
+        <p>EIN: 87-1234567</p>
+      </div>
+      <div class="footer-legal-row">
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">SMS Opt-Out</a>
+        </div>
+        <p class="footer-copy">Copyright 2025 Grax Media LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="disclaimer-strip">
+  <p>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. Apex Burn is intended for use by healthy adults 18 years of age or older. Consult a licensed physician before use, especially if pregnant, nursing, or taking medication. Discounts apply to this web offer only and are subject to change without notice.</p>
+</div>
+
+<!-- MOBILE STICKY BAR -->
+<div class="sticky-bar">
+  <div class="sticky-bar-price">
+    $234
+    <small>6 Bottles. Save $155.</small>
+  </div>
+  <a href="#offer" class="sticky-bar-btn">Order Now &#8594;</a>
+</div>
+
+<script>
+(function() {
+  var h = 4, m = 37, s = 22;
+  function tick() {
+    s--;
+    if (s < 0) { s = 59; m--; }
+    if (m < 0) { m = 59; h--; }
+    if (h < 0) { h = 0; m = 0; s = 0; }
+    document.getElementById('ct-h').textContent = String(h).padStart(2,'0');
+    document.getElementById('ct-m').textContent = String(m).padStart(2,'0');
+    document.getElementById('ct-s').textContent = String(s).padStart(2,'0');
+  }
+  setInterval(tick, 1000);
+})();
+</script>
+
+</body>
+</html>
